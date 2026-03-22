@@ -14,7 +14,9 @@ import theme from "./theme";
 import * as styles from "./styles/appStyles";
 import GamePosterCard from "./components/GamePosterCard";
 import GameReviewCard from "./components/GameReviewCard";
+import SectionHeader from "./components/SectionHeader";
 import { getHomeViewModel } from "./controllers/homeController";
+import { FEATURED_SECTIONS, NAV_ITEMS } from "./constants/homeContent";
 
 export default function App() {
   const [featuredGames, setFeaturedGames] = useState([]);
@@ -58,36 +60,20 @@ export default function App() {
               </Typography>
             </Stack>
             <Stack direction="row" spacing={9}>
-              <Button
-                disableRipple
-                sx={{
-                  ...styles.navButtonBaseSx,
-                  color: "#40559A",
-                  fontWeight: 700,
-                }}
-              >
-                Home
-              </Button>
-              <Button
-                disableRipple
-                sx={{
-                  ...styles.navButtonBaseSx,
-                  color: "#000000",
-                  fontWeight: 500,
-                }}
-              >
-                Discover
-              </Button>
-              <Button
-                disableRipple
-                sx={{
-                  ...styles.navButtonBaseSx,
-                  color: "#000000",
-                  fontWeight: 500,
-                }}
-              >
-                My Game Library
-              </Button>
+              {NAV_ITEMS.map((item) => (
+                <Button
+                  key={`nav-item-${item.label}`}
+                  disableRipple
+                  sx={{
+                    ...styles.navButtonBaseSx,
+                    ...(item.isActive
+                      ? styles.navButtonActiveSx
+                      : styles.navButtonDefaultSx),
+                  }}
+                >
+                  {item.label}
+                </Button>
+              ))}
             </Stack>
           </Toolbar>
         </AppBar>
@@ -141,13 +127,11 @@ export default function App() {
             </Box>
           </Container>
           <Container maxWidth={false} disableGutters>
-            <Box id="featuredGames" sx={styles.featuredTitlesSx}>
-              <Typography variant="h2" sx={styles.featuredHeadingSx}>
-                Featured Games
-              </Typography>
-              <Typography variant="subtitle1" sx={styles.featuredSubtitleSx}>
-                Top picks from the community this week.
-              </Typography>
+            <Box id="featuredGames">
+              <SectionHeader
+                title={FEATURED_SECTIONS.games.title}
+                subtitle={FEATURED_SECTIONS.games.subtitle}
+              />
               <Box id="featuredGamesGrid" sx={styles.featuredGamesGridSx}>
                 {featuredGames.map((game) => (
                   <GamePosterCard
@@ -161,13 +145,11 @@ export default function App() {
             </Box>
           </Container>
           <Container maxWidth={false} disableGutters>
-            <Box id="featuredReviews" sx={styles.featuredTitlesSx}>
-              <Typography variant="h2" sx={styles.featuredHeadingSx}>
-                Featured Reviews
-              </Typography>
-              <Typography variant="subtitle1" sx={styles.featuredSubtitleSx}>
-                Top picks from the community this week.
-              </Typography>
+            <Box id="featuredReviews">
+              <SectionHeader
+                title={FEATURED_SECTIONS.reviews.title}
+                subtitle={FEATURED_SECTIONS.reviews.subtitle}
+              />
               <Stack
                 direction="row"
                 spacing={8}

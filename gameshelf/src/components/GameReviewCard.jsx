@@ -1,4 +1,11 @@
 import { Box, Stack, Typography } from "@mui/material";
+import PosterMedia from "./PosterMedia";
+import StarRating from "./StarRating";
+import {
+  DEFAULT_REVIEW_RATING,
+  MAX_REVIEW_RATING,
+} from "../constants/homeContent";
+import * as styles from "../styles/appStyles";
 
 export default function GameReviewCard({
   title = "Game Title",
@@ -32,56 +39,30 @@ export default function GameReviewCard({
           backgroundColor: "#dee4ef",
         }}
       >
-        {posterSrc ? (
-          <Box
-            component="img"
-            src={posterSrc}
-            alt={posterAlt || `${title} poster`}
-            sx={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              display: "block",
-            }}
-          />
-        ) : (
-          <Box
-            sx={{
-              width: "100%",
-              height: "100%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              background:
-                "linear-gradient(145deg, #f3f5fa 0%, #e8ecf6 55%, #dfe6f4 100%)",
-            }}
-          >
-            <Typography variant="subtitle1" sx={{ color: "#5f6f8d" }}>
-              Poster Placeholder
-            </Typography>
-          </Box>
-        )}
+        <PosterMedia
+          title={title}
+          posterSrc={posterSrc}
+          posterAlt={posterAlt}
+          wrapperSx={{ width: "100%", height: "100%" }}
+          imageSx={styles.posterImageSx}
+          placeholderLabel="Poster Placeholder"
+          placeholderSx={styles.posterPlaceholderWrapSx}
+          placeholderTextVariant="subtitle1"
+          placeholderTextSx={{ color: "#5f6f8d" }}
+        />
       </Box>
 
       <Typography variant="h5" sx={{ color: "#0f1013", fontWeight: 700 }}>
         {title}
       </Typography>
 
-      <Stack direction="row" spacing={0.4}>
-        {[0, 1, 2, 3, 4].map((starIndex) => (
-          <Box
-            key={starIndex}
-            component="span"
-            sx={{
-              color: starIndex < 4 ? "#f5c243" : "#dbdde3",
-              fontSize: 50,
-              lineHeight: 0.9,
-            }}
-          >
-            ★
-          </Box>
-        ))}
-      </Stack>
+      <StarRating
+        value={DEFAULT_REVIEW_RATING}
+        max={MAX_REVIEW_RATING}
+        activeColor={styles.ratingActiveColor}
+        inactiveColor={styles.ratingInactiveColor}
+        size={styles.ratingStarSizeLg}
+      />
 
       <Typography variant="subtitle1" sx={{ color: "#16171b", mt: 1.6 }}>
         {reviewText}

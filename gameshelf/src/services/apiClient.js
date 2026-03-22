@@ -17,7 +17,7 @@ export async function getJson(path, options = {}) {
     });
   }
 
-  const { query, ...fetchOptions } = options;
+  const { query: _query, ...fetchOptions } = options;
 
   const response = await fetch(url.toString(), {
     method: "GET",

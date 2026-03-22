@@ -1,4 +1,6 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
+import PosterMedia from "./PosterMedia";
+import * as styles from "../styles/appStyles";
 
 export default function GamePosterCard({
   title = "Game title",
@@ -27,36 +29,20 @@ export default function GamePosterCard({
         ...sx,
       }}
     >
-      {posterSrc ? (
-        <Box
-          component="img"
-          src={posterSrc}
-          alt={posterAlt || `${title} poster`}
-          sx={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            display: "block",
-          }}
-        />
-      ) : (
-        <Box
-          sx={{
-            width: "100%",
-            height: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            background:
-              "linear-gradient(145deg, #f3f5fa 0%, #e8ecf6 55%, #dfe6f4 100%)",
-            boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.45)",
-          }}
-        >
-          <Typography variant="subtitle2" sx={{ color: "#60708f" }}>
-            {title}
-          </Typography>
-        </Box>
-      )}
+      <PosterMedia
+        title={title}
+        posterSrc={posterSrc}
+        posterAlt={posterAlt}
+        wrapperSx={{ width: "100%", height: "100%" }}
+        imageSx={styles.posterImageSx}
+        placeholderLabel={title}
+        placeholderSx={{
+          ...styles.posterPlaceholderWrapSx,
+          ...styles.posterPlaceholderInsetSx,
+        }}
+        placeholderTextVariant="subtitle2"
+        placeholderTextSx={{ color: "#60708f" }}
+      />
     </Box>
   );
 }

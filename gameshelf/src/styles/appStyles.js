@@ -62,6 +62,14 @@ export const buttons = {
     textTransform: "none",
     "&:hover": { backgroundColor: "transparent" },
   },
+  navActive: {
+    color: "#40559A",
+    fontWeight: 700,
+  },
+  navDefault: {
+    color: "#000000",
+    fontWeight: 500,
+  },
   primaryCta: {
     backgroundColor: "#40559A",
     color: "#fff",
@@ -147,6 +155,33 @@ export const placeholders = {
       "linear-gradient(145deg, #f3f5fa 0%, #e8ecf6 55%, #dfe6f4 100%)",
     boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.45)",
   },
+  posterWrap: {
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    background:
+      "linear-gradient(145deg, #f3f5fa 0%, #e8ecf6 55%, #dfe6f4 100%)",
+  },
+  posterWrapInset: {
+    boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.45)",
+  },
+};
+
+export const images = {
+  cover: {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    display: "block",
+  },
+};
+
+export const ratings = {
+  active: "#f5c243",
+  inactive: "#dbdde3",
+  starSizeLg: 50,
 };
 
 export const typography = {
@@ -166,6 +201,8 @@ export const appShellSx = layout.appShell;
 export const headerBarSx = surfaces.topBar;
 export const toolbarSx = layout.toolbarBetween;
 export const navButtonBaseSx = buttons.textLike;
+export const navButtonActiveSx = buttons.navActive;
+export const navButtonDefaultSx = buttons.navDefault;
 export const mainSx = layout.main;
 export const heroRowSx = layout.rowBetween;
 export const heroTextColumnSx = sections.heroTextColumn;
@@ -181,6 +218,12 @@ export const featuredSubtitleSx = typography.featuredSubtitle;
 export const featuredGamesGridSx = grids.featuredGames;
 export const featuredGameCardSx = cards.featuredGame;
 export const featuredGamePlaceholderSx = placeholders.imageCard;
+export const posterPlaceholderWrapSx = placeholders.posterWrap;
+export const posterPlaceholderInsetSx = placeholders.posterWrapInset;
+export const posterImageSx = images.cover;
+export const ratingActiveColor = ratings.active;
+export const ratingInactiveColor = ratings.inactive;
+export const ratingStarSizeLg = ratings.starSizeLg;
 export const heroImageWrapSx = media.fadeLeftToTransparentWrap;
 export const heroImageSx = media.imageContain;
 export const footerSx = surfaces.footer;
