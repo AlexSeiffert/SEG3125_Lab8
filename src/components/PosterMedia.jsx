@@ -12,7 +12,13 @@ export default function PosterMedia({
   placeholderTextSx,
 }) {
   return (
-    <Box sx={wrapperSx}>
+    <Box
+      sx={{
+        width: '100%',
+        height: '100%',
+        ...wrapperSx,
+      }}
+    >
       {posterSrc ? (
         <Box
           component="img"
