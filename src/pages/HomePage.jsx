@@ -1,5 +1,5 @@
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
-import homePageHero from "../assets/homePageHero.png";
+import homePageHero from "../assets/homePageHero.jpg";
 import GamePosterCard from "../components/GamePosterCard";
 import GameReviewCard from "../components/GameReviewCard";
 import SectionHeader from "../components/SectionHeader";

@@ -28,7 +28,17 @@ http://localhost:5173
 
 Do not open index.html directly with Live Server for this project.
 
-## Deploy to GitHub Pages
+## Deploy to GitHub Pages (recommended)
+
+If you do not see a `gh-pages` branch option in GitHub Pages settings, use GitHub Actions deployment.
+
+1. Push your latest code to `main`.
+2. In GitHub, go to Settings > Pages.
+3. Set Source to `GitHub Actions`.
+4. Go to the Actions tab and run the `Deploy to GitHub Pages` workflow (or push to `main` to trigger it).
+5. After it finishes, your site URL will appear in Settings > Pages.
+
+## Deploy to GitHub Pages (manual branch method)
 
 1. Create a GitHub repository and push this project to it.
 2. Run the deploy command:
