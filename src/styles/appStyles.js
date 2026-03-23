@@ -3,40 +3,23 @@ export const layout = {
     display: 'flex',
     flexDirection: 'column',
     minHeight: '100vh',
-<<<<<<< HEAD:src/styles/appStyles.js
-=======
     backgroundColor: '#ffffff',
->>>>>>> 972d8ea (add game images; Update poster cards to fill grid cleanly by switching storefront images to cover mode; align the overall design with lab 7 text description more literally):gameshelf/src/styles/appStyles.js
   },
   main: {
     flex: 1,
     py: 0,
   },
-<<<<<<< HEAD:src/styles/appStyles.js
-  toolbarBetween: {
-    justifyContent: 'space-between',
-    px: { xs: 3, md: 8 },
-=======
   sectionContainer: {
     width: '100%',
     maxWidth: 1440,
     mx: 'auto',
     px: { xs: 2, sm: 3, md: 4 },
     boxSizing: 'border-box',
->>>>>>> 972d8ea (add game images; Update poster cards to fill grid cleanly by switching storefront images to cover mode; align the overall design with lab 7 text description more literally):gameshelf/src/styles/appStyles.js
   },
   rowBetween: {
     alignItems: 'center',
     justifyContent: 'space-between',
     width: '100%',
-<<<<<<< HEAD:src/styles/appStyles.js
-  },
-  columnLeft: {
-    textAlign: 'left',
-  },
-  contentInsetLeft: {
-    pl: { xs: 0, md: 10 },
-=======
     maxWidth: 1440,
     mx: 'auto',
     px: { xs: 2, sm: 3, md: 4 },
@@ -53,7 +36,6 @@ export const layout = {
   },
   columnLeft: {
     textAlign: 'left',
->>>>>>> 972d8ea (add game images; Update poster cards to fill grid cleanly by switching storefront images to cover mode; align the overall design with lab 7 text description more literally):gameshelf/src/styles/appStyles.js
   },
   sectionGapLg: {
     mt: { xs: 5, md: 6 },
@@ -66,18 +48,11 @@ export const surfaces = {
     backgroundColor: '#fff',
     justifyContent: 'center',
     boxShadow: 'none',
-<<<<<<< HEAD:src/styles/appStyles.js
-  },
-  footer: {
-    backgroundColor: '#f5f5f5',
-    borderTop: '1px solid #e0e0e0',
-=======
     borderBottom: '1px solid #eceff4',
   },
   footer: {
     backgroundColor: '#f7f7f8',
     borderTop: '1px solid #e6e8ee',
->>>>>>> 972d8ea (add game images; Update poster cards to fill grid cleanly by switching storefront images to cover mode; align the overall design with lab 7 text description more literally):gameshelf/src/styles/appStyles.js
     py: 3,
     mt: 6,
   },
@@ -85,17 +60,10 @@ export const surfaces = {
 
 export const text = {
   muted: {
-<<<<<<< HEAD:src/styles/appStyles.js
-    color: '#555',
-  },
-  dark: {
-    color: '#000000',
-=======
     color: '#606775',
   },
   dark: {
     color: '#111216',
->>>>>>> 972d8ea (add game images; Update poster cards to fill grid cleanly by switching storefront images to cover mode; align the overall design with lab 7 text description more literally):gameshelf/src/styles/appStyles.js
   },
   inverse: {
     color: '#ffffff',
@@ -115,11 +83,7 @@ export const buttons = {
     fontWeight: 700,
   },
   navDefault: {
-<<<<<<< HEAD:src/styles/appStyles.js
-    color: '#000000',
-=======
     color: '#111216',
->>>>>>> 972d8ea (add game images; Update poster cards to fill grid cleanly by switching storefront images to cover mode; align the overall design with lab 7 text description more literally):gameshelf/src/styles/appStyles.js
     fontWeight: 500,
   },
   primaryCta: {
@@ -127,19 +91,6 @@ export const buttons = {
     color: '#fff',
     textTransform: 'none',
     borderRadius: 2,
-<<<<<<< HEAD:src/styles/appStyles.js
-    maxWidth: 'fit-content',
-    px: 2.2,
-    py: 0.9,
-  },
-  secondaryCta: {
-    borderColor: '#0000002a',
-    textTransform: 'none',
-    borderRadius: 2,
-    maxWidth: 'fit-content',
-    px: 2.2,
-    py: 0.9,
-=======
     px: 2.2,
     py: 1,
     maxWidth: 'fit-content',
@@ -161,7 +112,6 @@ export const buttons = {
       borderColor: '#b9c0d0',
       backgroundColor: '#f8f9fc',
     },
->>>>>>> 972d8ea (add game images; Update poster cards to fill grid cleanly by switching storefront images to cover mode; align the overall design with lab 7 text description more literally):gameshelf/src/styles/appStyles.js
   },
 };
 
@@ -174,27 +124,15 @@ export const media = {
   },
   fadeLeftToTransparentWrap: {
     position: 'relative',
-<<<<<<< HEAD:src/styles/appStyles.js
-=======
     width: { xs: '100%', md: '56%' },
->>>>>>> 972d8ea (add game images; Update poster cards to fill grid cleanly by switching storefront images to cover mode; align the overall design with lab 7 text description more literally):gameshelf/src/styles/appStyles.js
     maxWidth: '100%',
     ml: 'auto',
     '&::after': {
       content: '""',
       position: 'absolute',
-<<<<<<< HEAD:src/styles/appStyles.js
-      top: 0,
-      left: 0,
-      width: '100%',
-      height: '100%',
-      background:
-        'linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 45%)',
-=======
       inset: 0,
       background:
         'linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 42%)',
->>>>>>> 972d8ea (add game images; Update poster cards to fill grid cleanly by switching storefront images to cover mode; align the overall design with lab 7 text description more literally):gameshelf/src/styles/appStyles.js
       pointerEvents: 'none',
     },
   },
@@ -203,22 +141,14 @@ export const media = {
 export const sections = {
   heroTextColumn: {
     ...layout.columnLeft,
-<<<<<<< HEAD:src/styles/appStyles.js
-    ...layout.contentInsetLeft,
-=======
     width: { xs: '100%', md: '34%' },
->>>>>>> 972d8ea (add game images; Update poster cards to fill grid cleanly by switching storefront images to cover mode; align the overall design with lab 7 text description more literally):gameshelf/src/styles/appStyles.js
   },
   heroActions: {
     mt: 3,
     alignItems: 'center',
   },
   featuredTitles: {
-<<<<<<< HEAD:src/styles/appStyles.js
-    px: { xs: 3, md: 10 },
-=======
     ...layout.sectionContainer,
->>>>>>> 972d8ea (add game images; Update poster cards to fill grid cleanly by switching storefront images to cover mode; align the overall design with lab 7 text description more literally):gameshelf/src/styles/appStyles.js
     ...layout.sectionGapLg,
   },
 };
@@ -226,13 +156,6 @@ export const sections = {
 export const grids = {
   featuredGames: {
     mt: 4,
-<<<<<<< HEAD:src/styles/appStyles.js
-    px: { xs: 3, md: 10 },
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-    gap: 4,
-    justifyContent: 'center',
-=======
     display: 'grid',
     gridTemplateColumns: {
       xs: 'repeat(2, minmax(0, 1fr))',
@@ -243,19 +166,14 @@ export const grids = {
     },
     gap: { xs: 2, sm: 2.5, md: 3 },
     alignItems: 'start',
->>>>>>> 972d8ea (add game images; Update poster cards to fill grid cleanly by switching storefront images to cover mode; align the overall design with lab 7 text description more literally):gameshelf/src/styles/appStyles.js
   },
 };
 
 export const cards = {
   featuredGame: {
     width: '100%',
-<<<<<<< HEAD:src/styles/appStyles.js
-    height: '100%',
-=======
     maxWidth: 210,
     justifySelf: 'center',
->>>>>>> 972d8ea (add game images; Update poster cards to fill grid cleanly by switching storefront images to cover mode; align the overall design with lab 7 text description more literally):gameshelf/src/styles/appStyles.js
   },
 };
 
@@ -265,13 +183,8 @@ export const placeholders = {
     aspectRatio: '4 / 5',
     borderRadius: 3,
     border: '1px solid #d9deea',
-<<<<<<< HEAD:src/styles/appStyles.js
-    background: 'linear-gradient(145deg, #f3f5fa 0%, #e8ecf6 55%, #dfe6f4 100%)',
-    boxShadow: 'inset 0 0 0 1px rgba(255,255,255,0.45)',
-=======
     backgroundColor: '#eef2f8',
     overflow: 'hidden',
->>>>>>> 972d8ea (add game images; Update poster cards to fill grid cleanly by switching storefront images to cover mode; align the overall design with lab 7 text description more literally):gameshelf/src/styles/appStyles.js
   },
   posterWrap: {
     width: '100%',
@@ -279,17 +192,10 @@ export const placeholders = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-<<<<<<< HEAD:src/styles/appStyles.js
-    background: 'linear-gradient(145deg, #f3f5fa 0%, #e8ecf6 55%, #dfe6f4 100%)',
-  },
-  posterWrapInset: {
-    boxShadow: 'inset 0 0 0 1px rgba(255,255,255,0.45)',
-=======
     backgroundColor: '#eef2f8',
   },
   posterWrapInset: {
     boxShadow: 'none',
->>>>>>> 972d8ea (add game images; Update poster cards to fill grid cleanly by switching storefront images to cover mode; align the overall design with lab 7 text description more literally):gameshelf/src/styles/appStyles.js
   },
 };
 
@@ -298,9 +204,6 @@ export const images = {
     width: '100%',
     height: '100%',
     objectFit: 'cover',
-<<<<<<< HEAD:src/styles/appStyles.js
-    display: 'block',
-=======
     objectPosition: 'center top',
     display: 'block',
   },
@@ -311,18 +214,13 @@ export const images = {
     objectPosition: 'center',
     display: 'block',
     backgroundColor: '#eef2f8',
->>>>>>> 972d8ea (add game images; Update poster cards to fill grid cleanly by switching storefront images to cover mode; align the overall design with lab 7 text description more literally):gameshelf/src/styles/appStyles.js
   },
 };
 
 export const ratings = {
   active: '#f5c243',
   inactive: '#dbdde3',
-<<<<<<< HEAD:src/styles/appStyles.js
-  starSizeLg: 34,
-=======
   starSizeLg: 50,
->>>>>>> 972d8ea (add game images; Update poster cards to fill grid cleanly by switching storefront images to cover mode; align the overall design with lab 7 text description more literally):gameshelf/src/styles/appStyles.js
 };
 
 export const typography = {
@@ -337,10 +235,7 @@ export const typography = {
   },
 };
 
-<<<<<<< HEAD:src/styles/appStyles.js
-=======
 // Backward-compatible exports
->>>>>>> 972d8ea (add game images; Update poster cards to fill grid cleanly by switching storefront images to cover mode; align the overall design with lab 7 text description more literally):gameshelf/src/styles/appStyles.js
 export const appShellSx = layout.appShell;
 export const headerBarSx = surfaces.topBar;
 export const toolbarSx = layout.toolbarBetween;
