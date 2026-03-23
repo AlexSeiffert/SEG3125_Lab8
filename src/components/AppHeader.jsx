@@ -1,14 +1,9 @@
-import { AppBar, Box, Button, Stack, Toolbar, Typography } from '@mui/material';
-import { NAV_ITEMS } from '../constants/homeContent';
-import * as styles from '../styles/appStyles';
+import { AppBar, Button, Stack, Toolbar, Typography } from "@mui/material";
+import { NAV_ITEMS } from "../constants/homeContent";
+import * as styles from "../styles/appStyles";
 
 export default function AppHeader({ currentPage, onNavigate }) {
-  const visibleNavItems =
-    currentPage === 'home'
-      ? NAV_ITEMS.filter((item) => item.key !== 'home')
-      : NAV_ITEMS;
-
-  const activeKey = currentPage === 'game' ? 'discover' : currentPage;
+  const activeKey = currentPage === "game" ? "discover" : currentPage;
 
   return (
     <AppBar position="static" sx={styles.headerBarSx}>
@@ -16,20 +11,20 @@ export default function AppHeader({ currentPage, onNavigate }) {
         <Stack
           direction="row"
           spacing={0}
-          sx={{ cursor: 'pointer' }}
-          onClick={() => onNavigate('home')}
+          sx={{ cursor: "pointer" }}
+          onClick={() => onNavigate("home")}
           aria-label="Go to home page"
         >
-          <Typography variant="h2" sx={{ color: '#000', fontWeight: 800 }}>
+          <Typography variant="h2" sx={{ color: "#000", fontWeight: 800 }}>
             Game
           </Typography>
-          <Typography variant="h2" sx={{ color: '#40559A', fontWeight: 800 }}>
+          <Typography variant="h2" sx={{ color: "#40559A", fontWeight: 800 }}>
             Shelf
           </Typography>
         </Stack>
 
         <Stack direction="row" spacing={{ xs: 3, md: 6 }}>
-          {visibleNavItems.map((item) => (
+          {NAV_ITEMS.map((item) => (
             <Button
               key={`nav-item-${item.key}`}
               disableRipple
@@ -46,8 +41,6 @@ export default function AppHeader({ currentPage, onNavigate }) {
           ))}
         </Stack>
       </Toolbar>
-
-      <Box sx={{ borderBottom: '1px solid #edf0f4' }} />
     </AppBar>
   );
 }

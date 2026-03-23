@@ -1,9 +1,16 @@
-import { useMemo, useState } from 'react';
-import { Box, Container, InputAdornment, Stack, TextField, Typography } from '@mui/material';
-import GamePosterCard from '../components/GamePosterCard';
+import { useMemo, useState } from "react";
+import {
+  Box,
+  Container,
+  InputAdornment,
+  Stack,
+  TextField,
+  Typography,
+} from "@mui/material";
+import GamePosterCard from "../components/GamePosterCard";
 
 export default function DiscoverPage({ games, onOpenGame }) {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
 
   const filteredGames = useMemo(() => {
     const normalized = query.trim().toLowerCase();
@@ -13,7 +20,7 @@ export default function DiscoverPage({ games, onOpenGame }) {
 
     return games.filter((game) => {
       const haystack = [game.title, game.developer, ...game.platforms]
-        .join(' ')
+        .join(" ")
         .toLowerCase();
       return haystack.includes(normalized);
     });
@@ -23,8 +30,11 @@ export default function DiscoverPage({ games, onOpenGame }) {
     <Container maxWidth="xl" sx={{ py: 5, px: { xs: 3, md: 8 } }}>
       <Stack spacing={2}>
         <Typography variant="h2">Discover</Typography>
-        <Typography variant="subtitle1" sx={{ color: '#626a7a', maxWidth: 760 }}>
-          Search by title, developer, or platform. This page supports the expert-user shortcut from your Lab 7 design while still allowing visual exploration.
+        <Typography
+          variant="subtitle1"
+          sx={{ color: "#626a7a", maxWidth: 760 }}
+        >
+          Search by title, developer, or platform.
         </Typography>
         <TextField
           value={query}
@@ -40,8 +50,8 @@ export default function DiscoverPage({ games, onOpenGame }) {
       <Box
         sx={{
           mt: 4,
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
           gap: 4,
         }}
       >
@@ -59,7 +69,7 @@ export default function DiscoverPage({ games, onOpenGame }) {
       </Box>
 
       {!filteredGames.length ? (
-        <Typography variant="body1" sx={{ mt: 5, color: '#6a6d75' }}>
+        <Typography variant="body1" sx={{ mt: 5, color: "#6a6d75" }}>
           No games match your search.
         </Typography>
       ) : null}
