@@ -3,6 +3,7 @@
 This is a minimally functional React web app for SEG3125 Lab 8.
 
 Implemented in this build:
+
 - Home page with featured games and featured reviews
 - Discover page with quick search
 - Game profile page
@@ -11,6 +12,7 @@ Implemented in this build:
 - Local state for reviews and library actions
 
 Next likely step:
+
 - replace page-state navigation with react-router-dom URLs
 - connect a real backend in Lab 9
 
