@@ -3,7 +3,6 @@ import homePageHero from '../assets/homePageHero.png';
 import GamePosterCard from '../components/GamePosterCard';
 import GameReviewCard from '../components/GameReviewCard';
 import SectionHeader from '../components/SectionHeader';
-import { FEATURED_SECTIONS } from '../constants/homeContent';
 import * as styles from '../styles/appStyles';
 
 export default function HomePage({
@@ -11,35 +10,63 @@ export default function HomePage({
   featuredReviews,
   onNavigate,
   onOpenGame,
+  tr,
 }) {
   return (
     <Box component="main" sx={styles.mainSx}>
       <Container maxWidth={false} disableGutters>
-        <Box id="homePageHero">
+        <Box id="homePageHero" sx={styles.homeHeroWrapSx}>
           <Stack
             direction={{ xs: 'column', md: 'row' }}
-            spacing={3}
-            sx={{ ...styles.heroRowSx, px: { xs: 3, md: 0 }, py: { xs: 5, md: 2 } }}
+            spacing={{ xs: 4, md: 5 }}
+            sx={{ ...styles.heroRowSx, px: 0, py: 0, alignItems: 'center' }}
           >
-            <Stack direction="column" spacing={3} sx={{ ...styles.heroTextColumnSx, width: { xs: '100%', md: '30%' } }}>
-              <Typography variant="h1">Your home for video game discovery</Typography>
-              <Typography variant="h5" sx={styles.heroSubtitleSx}>
-                Track what you play. Share what you think. Discover what&apos;s next.
+            <Stack
+              direction="column"
+              spacing={2.5}
+              sx={{
+                ...styles.heroTextColumnSx,
+                width: { xs: '100%', md: '36%' },
+              }}
+            >
+              <Typography variant="h1" sx={{ ...styles.heroTitleSx, mt: 0 }}>
+                {tr('hero.title')}
               </Typography>
-              <Stack direction="row" spacing={2} sx={styles.heroActionsSx}>
-                <Button variant="contained" sx={styles.heroPrimaryButtonSx} onClick={() => onNavigate('discover')}>
+              <Typography variant="h5" sx={styles.heroSubtitleSx}>
+                {tr('hero.subtitle')}
+              </Typography>
+              <Stack
+                direction={{ xs: 'column', sm: 'row' }}
+                spacing={2}
+                sx={styles.heroActionsSx}
+              >
+                <Button
+                  variant="contained"
+                  sx={styles.heroPrimaryButtonSx}
+                  onClick={() => onNavigate('discover')}
+                >
                   <Typography variant="subtitle1" sx={styles.heroPrimaryButtonTextSx}>
-                    Discover
+                    {tr('hero.discover')}
                   </Typography>
                 </Button>
-                <Button variant="outlined" sx={styles.heroSecondaryButtonSx} onClick={() => onNavigate('library')}>
+                <Button
+                  variant="outlined"
+                  sx={styles.heroSecondaryButtonSx}
+                  onClick={() => onNavigate('library')}
+                >
                   <Typography variant="subtitle1" sx={styles.heroSecondaryButtonTextSx}>
-                    My Game Library
+                    {tr('hero.library')}
                   </Typography>
                 </Button>
               </Stack>
             </Stack>
-            <Box sx={{ ...styles.heroImageWrapSx, width: { xs: '100%', md: '58%' } }}>
+
+            <Box
+              sx={{
+                ...styles.heroImageWrapSx,
+                width: { xs: '100%', md: '58%' },
+              }}
+            >
               <Box component="img" src={homePageHero} alt="GameShelf hero" sx={styles.heroImageSx} />
             </Box>
           </Stack>
@@ -47,10 +74,10 @@ export default function HomePage({
       </Container>
 
       <Container maxWidth={false} disableGutters>
-        <Box id="featuredGames">
+        <Box id="featuredGames" sx={styles.homeSectionWrapSx}>
           <SectionHeader
-            title={FEATURED_SECTIONS.games.title}
-            subtitle={FEATURED_SECTIONS.games.subtitle}
+            title={tr('sections.featuredGames')}
+            subtitle={tr('sections.featuredSubtitle')}
           />
           <Box id="featuredGamesGrid" sx={styles.featuredGamesGridSx}>
             {featuredGames.map((game) => (
@@ -68,18 +95,14 @@ export default function HomePage({
       </Container>
 
       <Container maxWidth={false} disableGutters>
-        <Box id="featuredReviews" sx={{ pb: 4 }}>
+        <Box id="featuredReviews" sx={styles.homeSectionWrapSx}>
           <SectionHeader
-            title={FEATURED_SECTIONS.reviews.title}
-            subtitle={FEATURED_SECTIONS.reviews.subtitle}
+            title={tr('sections.featuredReviews')}
+            subtitle={tr('sections.featuredSubtitle')}
           />
-          <Stack
-            direction={{ xs: 'column', xl: 'row' }}
-            spacing={4}
-            sx={{ mt: 4, py: 1, justifyContent: 'center', px: { xs: 3, md: 10 } }}
-          >
+          <Stack direction="row" spacing={4} sx={styles.homeReviewsRowSx}>
             {featuredReviews.map((review) => (
-              <Box key={`featured-review-${review.id}`} sx={{ mt: { xl: 4 } }}>
+              <Box key={`featured-review-${review.id}`} sx={{ flex: '0 0 auto' }}>
                 <GameReviewCard
                   title={review.title}
                   reviewText={review.reviewText}
