@@ -15,7 +15,10 @@ import GamePosterCard from '../components/GamePosterCard';
 
 export default function DiscoverPage({ games, onOpenGame, tr }) {
   const [query, setQuery] = useState('');
+<<<<<<< HEAD
   // MODIFIED: platform filter and sort controls added
+=======
+>>>>>>> Macintosh
   const [platformFilter, setPlatformFilter] = useState('all');
   const [sortBy, setSortBy] = useState('popular');
 

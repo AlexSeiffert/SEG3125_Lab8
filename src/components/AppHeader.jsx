@@ -9,10 +9,15 @@ export default function AppHeader({
   onChangeLanguage,
   tr,
 }) {
+<<<<<<< HEAD
   // MODIFIED: keep discover highlighted while on an individual game page.
   const activeKey = currentPage === 'game' ? 'discover' : currentPage;
 
   // MODIFIED: added profile navigation item.
+=======
+  const activeKey = currentPage === 'game' ? 'discover' : currentPage;
+
+>>>>>>> Macintosh
   const navItems = [
     { key: 'home', label: tr('nav.home') },
     { key: 'discover', label: tr('nav.discover') },
@@ -57,7 +62,10 @@ export default function AppHeader({
             ))}
           </Stack>
 
+<<<<<<< HEAD
           {/* MODIFIED: bilingual language switcher */}
+=======
+>>>>>>> Macintosh
           <Stack
             direction="row"
             spacing={1}

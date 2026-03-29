@@ -29,7 +29,10 @@ export default function HomePage({
                 width: { xs: '100%', md: '36%' },
               }}
             >
+<<<<<<< HEAD
               {/* MODIFIED: bilingual hero strings */}
+=======
+>>>>>>> Macintosh
               <Typography variant="h1" sx={{ ...styles.heroTitleSx, mt: 0 }}>
                 {tr('hero.title')}
               </Typography>
